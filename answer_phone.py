@@ -50,11 +50,11 @@ def get_call_logs(phone_number: str, date: str):
             if planb and planb == "1":
                 qualified = "true"
 
-        table_rows.append([id, number, str(age and age == "1"), str(interested and interested == "1"), str(planb and planb == "1"), qualified, converted])
+        table_rows.append([id, number, str(age and age == "1"), str(planb and planb == "1"), qualified, converted])
 
     final_string += tabulate.tabulate(
         tabular_data=table_rows,
-        headers=["|id|", "|phone number|", "|under 65|", "|interested if under 65|", "|plan b if over 65|", "|qualified|", "|converted|"],
+        headers=["|id|", "|phone number|", "|over 65|", "|plan b if over 65|", "|qualified|", "|converted|"],
         tablefmt="html",
     )
     return final_string
@@ -65,10 +65,10 @@ def welcome():
     response = VoiceResponse()
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(message="Thank you for calling! Before we connect you with an agent, we have one quick question.", voice="alice")
-        g.say(message="Are you under 65 years old? Press 1 for yes. Press 2 for no.", loop=1, voice="alice")
+        g.say(message="Are you over 65 years old? Press 1 for yes. Press 2 for no.", loop=1, voice="alice")
 
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
-        g.say(message="Are you under 65 years old? Press 1 for yes. Press 2 for no.", loop=1, voice="alice")
+        g.say(message="Are you over 65 years old? Press 1 for yes. Press 2 for no.", loop=1, voice="alice")
 
     response.redirect("end")
     return twiml(response)
@@ -85,7 +85,7 @@ def end():
 @app.route("/age", methods=["POST"])
 def age():
     selected_option = request.form["Digits"]
-    option_actions = {"1": _ask_interest, "2": _ask_planb}
+    option_actions = {"1": _ask_planb, "2": _hang_up}
 
     if selected_option in option_actions.keys():
         response = VoiceResponse()
