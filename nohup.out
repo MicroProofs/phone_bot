@@ -1,0 +1,93 @@
+ * Serving Flask app 'answer_phone' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 187-250-683
+ * Serving Flask app 'answer_phone' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 187-250-683
+Traceback (most recent call last):
+  File "/Users/kwhite/work/scm/phone_bot/answer_phone.py", line 194, in <module>
+    app.run(debug=True)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 920, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/serving.py", line 1002, in run_simple
+    _rwr(
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 418, in run_with_reloader
+    ensure_echo_on()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 398, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')
+ * Serving Flask app 'answer_phone' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 187-250-683
+Traceback (most recent call last):
+  File "/Users/kwhite/work/scm/phone_bot/answer_phone.py", line 194, in <module>
+    app.run(debug=True)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 920, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/serving.py", line 1002, in run_simple
+    _rwr(
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 418, in run_with_reloader
+    ensure_echo_on()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 398, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')
+ * Serving Flask app 'answer_phone' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 187-250-683
+Traceback (most recent call last):
+  File "/Users/kwhite/work/scm/phone_bot/answer_phone.py", line 194, in <module>
+    app.run(debug=True)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 920, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/serving.py", line 1002, in run_simple
+    _rwr(
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 418, in run_with_reloader
+    ensure_echo_on()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 398, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')
+ * Serving Flask app 'answer_phone' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 187-250-683
+Traceback (most recent call last):
+  File "/Users/kwhite/work/scm/phone_bot/answer_phone.py", line 194, in <module>
+    app.run(debug=True)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 920, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/serving.py", line 1002, in run_simple
+    _rwr(
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 418, in run_with_reloader
+    ensure_echo_on()
+  File "/usr/local/lib/python3.9/site-packages/werkzeug/_reloader.py", line 398, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')
