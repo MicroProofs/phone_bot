@@ -22,7 +22,7 @@ def twiml(resp: VoiceResponse):
 
 @app.route("/", methods=["GET"])
 def my_form():
-    return render_template("my-form.html")
+    return render_template("myform.html")
 
 
 @app.route("/", methods=["POST"])
@@ -34,7 +34,7 @@ def my_form_post():
 
 @app.route("/call_conversion_logs/<phone_number>/<date>", methods=["GET"])
 def get_call_logs(phone_number: str, date: str):
-    final_string = "<h3>If under 65 we only need to check if interested in a policy. If over 65 we need to check if they have plan B Medicare</h3><br><br>"
+    final_string = "<h3>If over 65 we need to check if they have plan B Medicare</h3><br><br>"
     table_rows = []
     calls = client.calls.list(start_time=date, to="+1" + phone_number, page_size=1000)
     for record in calls:
@@ -48,11 +48,11 @@ def get_call_logs(phone_number: str, date: str):
         planb = None
         qualified = "false"
         converted = "pending"
+        # if age and age == "1":
+        #     interested = _check_events_urlpath_and_digits("interested", events)
+        #     if interested and interested == "1":
+        #         qualified = "true"
         if age and age == "1":
-            interested = _check_events_urlpath_and_digits("interested", events)
-            if interested and interested == "1":
-                qualified = "true"
-        if age and age == "2":
             planb = _check_events_urlpath_and_digits("planb", events)
             if planb and planb == "1":
                 qualified = "true"
