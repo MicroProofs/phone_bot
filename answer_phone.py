@@ -20,9 +20,16 @@ def twiml(resp: VoiceResponse):
     return resp
 
 
-@app.route("/")
-def hello():
-    return "Hello World!"
+@app.route("/", methods=["GET"])
+def my_form():
+    return render_template("my-form.html")
+
+
+@app.route("/", methods=["POST"])
+def my_form():
+    phone = request.form["phone"]
+    date = request.form["date"]
+    return redirect("https://www.nextgenpolicies.com/call_conversion_logs/" + phone + "/" + date)
 
 
 @app.route("/call_conversion_logs/<phone_number>/<date>", methods=["GET"])
