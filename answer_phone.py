@@ -173,12 +173,13 @@ def _ask_planb(response: VoiceResponse):
 
 
 def _convert_not_senior(response: VoiceResponse):
-    response.dial("+12024173378")
+    response.hangup()
+    # response.dial("+12024173378")
     return twiml(response)
 
 
 def _convert_senior(response: VoiceResponse):
-    response.dial("+12024173378")
+    response.dial("+18885971052")
     return twiml(response)
 
 
