@@ -26,7 +26,7 @@ def my_form():
 
 
 @app.route("/", methods=["POST"])
-def my_form():
+def my_form_post():
     phone = request.form["phone"]
     date = request.form["date"]
     return redirect("https://www.nextgenpolicies.com/call_conversion_logs/" + phone + "/" + date)
