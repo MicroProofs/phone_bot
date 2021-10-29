@@ -1,4 +1,3 @@
-import re
 from flask import flash, render_template, redirect, request, session, url_for, Flask
 from twilio.rest.pricing.v1.voice.number import NumberInstance
 
