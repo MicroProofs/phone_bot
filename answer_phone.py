@@ -166,14 +166,14 @@ def _ask_interest(response: VoiceResponse):
 def _ask_planb(response: VoiceResponse):
     with response.gather(numDigits=1, action=url_for("planb"), method="POST") as g:
         g.say(
-            "While we get an agent on the line,,, Are you signed up for Part B Medicare? Press 1 for Yes... Press 2 for No...",
+            "While we get an agent on the line,,, Are you signed up for Medicare Parts A and B? Press 1 for Yes... Press 2 for No...",
             voice="Polly.Joanna",
             rate="85%",
         )
 
     with response.gather(numDigits=1, action=url_for("planb"), method="POST") as g:
         g.say(
-            "While we get an agent on the line,,, Are you signed up for Part B Medicare? Press 1 for Yes.... Press 2 for No...",
+            "While we get an agent on the line,,, Are you signed up for Medicare Parts A and B? Press 1 for Yes... Press 2 for No...",
             voice="Polly.Joanna",
             loop=1,
         )
