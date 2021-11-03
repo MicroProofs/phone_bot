@@ -74,12 +74,12 @@ def welcome():
     response = VoiceResponse()
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(
-            message="Thank you for calling Meta surance!. Before we connect you with an agent,,,, please answer one quick question......",
+            message="Thank you for calling Meta surance!. Before we connect you with an agent,,,, please choose from the following......",
             voice="Polly.Joanna",
             rate="85%",
         )
         g.pause()
-        g.say(message="Press 1 if you are over 65.. Press 2 if you are under 65..", voice="Polly.Joanna", rate="80%")
+        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", voice="Polly.Joanna", rate="80%")
 
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(message="Press 1 if you are over 65.. Press 2 if you are under 65..", loop=1, voice="Polly.Joanna", rate="80%")
