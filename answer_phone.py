@@ -175,7 +175,7 @@ def _ask_planb(response: VoiceResponse):
         g.say(
             "While we get an agent on the line,,, Are you signed up for Medicare Parts A and B? Press 1 for Yes... Press 2 for No...",
             voice="Polly.Joanna",
-            loop=1,
+            rate="85%",
         )
     response.redirect("end")
     return response
@@ -202,4 +202,4 @@ def _check_events_urlpath_and_digits(urlpath, events):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
