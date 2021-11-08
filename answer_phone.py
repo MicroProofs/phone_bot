@@ -75,14 +75,14 @@ def welcome():
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(
             message="Thank you for calling Meta surance!. Before we connect you with an agent,,,, please choose from the following......",
-            voice="Polly.Joanna",
+            voice="Polly.Matthew",
             rate="85%",
         )
         g.pause()
-        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", voice="Polly.Joanna", rate="80%")
+        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", voice="Polly.Matthew", rate="80%")
 
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
-        g.say(message="Press 1 if you are over 65.. Press 2 if you are under 65..", loop=1, voice="Polly.Joanna", rate="80%")
+        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", loop=1, voice="Polly.Matthew", rate="80%")
 
     response.redirect("end")
     return twiml(response)
@@ -140,45 +140,45 @@ def planb():
 
 # private methods
 def _hang_up(response: VoiceResponse):
-    response.say("I am sorry, at this time we do not have any available reps.", voice="Polly.Joanna")
+    response.say("I am sorry, at this time we do not have any available reps.", voice="Polly.Matthew")
     response.hangup()
-    return response
+    return twiml(response)
 
 
 def _ask_interest(response: VoiceResponse):
     with response.gather(numDigits=1, action=url_for("interested"), method="POST") as g:
         g.say(
             "While we get an agent on the line,,, Are you looking for an active policy as soon as possible? Press 1 for Yes... Press 2 for No...",
-            voice="Polly.Joanna",
+            voice="Polly.Matthew",
             rate="85%",
         )
 
     with response.gather(numDigits=1, action=url_for("interested"), method="POST") as g:
         g.say(
             "While we get an agent on the line,,, Are you looking for an active policy as soon as possible? Press 1 for Yes... Press 2 for No...",
-            voice="Polly.Joanna",
+            voice="Polly.Matthew",
             rate="85%",
         )
     response.redirect("end")
-    return response
+    return twiml(response)
 
 
 def _ask_planb(response: VoiceResponse):
     with response.gather(numDigits=1, action=url_for("planb"), method="POST") as g:
         g.say(
             "While we get an agent on the line,,, Are you signed up for Medicare Parts A and B? Press 1 for Yes... Press 2 for No...",
-            voice="Polly.Joanna",
+            voice="Polly.Matthew",
             rate="85%",
         )
 
     with response.gather(numDigits=1, action=url_for("planb"), method="POST") as g:
         g.say(
             "While we get an agent on the line,,, Are you signed up for Medicare Parts A and B? Press 1 for Yes... Press 2 for No...",
-            voice="Polly.Joanna",
+            voice="Polly.Matthew",
             rate="85%",
         )
     response.redirect("end")
-    return response
+    return twiml(response)
 
 
 def _convert_not_senior(response: VoiceResponse):
