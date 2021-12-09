@@ -74,15 +74,15 @@ def welcome():
     response = VoiceResponse()
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(
-            message="Thank you for calling Meta surance!. Before we connect you with an agent,,,, please choose from the following......",
+            message="Thank you for calling Redisurance!. Before we connect you with an agent,,,, please choose from the following......",
             voice="Polly.Matthew",
             rate="85%",
         )
         g.pause()
-        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", voice="Polly.Matthew", rate="80%")
+        g.say(message="Press 1 if you are under the age of 65.. Press 2 if no..", voice="Polly.Matthew", rate="80%")
 
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
-        g.say(message="Press 1 if you are over the age of 65.. Press 2 if no..", loop=1, voice="Polly.Matthew", rate="80%")
+        g.say(message="Press 1 if you are under the age of 65.. Press 2 if no..", loop=1, voice="Polly.Matthew", rate="80%")
 
     response.redirect("end")
     return twiml(response)
@@ -99,7 +99,7 @@ def end():
 @app.route("/age", methods=["POST"])
 def age():
     selected_option = request.form["Digits"]
-    option_actions = {"1": _ask_planb, "2": _hang_up}
+    option_actions = {"1": _ask_planb, "2": _ask_interest}
 
     if selected_option in option_actions.keys():
         response = VoiceResponse()
@@ -183,7 +183,7 @@ def _ask_planb(response: VoiceResponse):
 
 def _convert_not_senior(response: VoiceResponse):
     response.hangup()
-    # response.dial("+12024173378")
+    response.dial("+18885971052")
     return twiml(response)
 
 
