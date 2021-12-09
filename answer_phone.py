@@ -55,15 +55,15 @@ def get_call_logs(phone_number: str, date: str):
         #     if interested and interested == "1":
         #         qualified = "true"
         if age and age == "1":
-            planb = _check_events_urlpath_and_digits("planb", events)
-            if planb and planb == "1":
+            interested = _check_events_urlpath_and_digits("interested", events)
+            if interested and interested == "1":
                 qualified = "true"
 
-        table_rows.append([id, number, str(age and age == "1"), str(planb and planb == "1"), qualified, converted])
+        table_rows.append([id, number, str(age and age == "1"), str(interested and interested == "1"), qualified, converted])
 
     final_string += tabulate.tabulate(
         tabular_data=table_rows,
-        headers=["|id|", "|phone number|", "|over 65|", "|plan b if over 65|", "|qualified|", "|converted|"],
+        headers=["|id|", "|phone number|", "|under 65|", "|interested under 65|", "|qualified|", "|converted|"],
         tablefmt="html",
     )
     return final_string
