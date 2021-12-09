@@ -74,7 +74,7 @@ def welcome():
     response = VoiceResponse()
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(
-            message="Thank you for calling Redisurance!. Before we connect you with an agent,,,, please choose from the following......",
+            message="Thank you for calling Red isurance!. Before we connect you with an agent,,,, please choose from the following......",
             voice="Polly.Matthew",
             rate="85%",
         )
