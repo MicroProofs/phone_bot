@@ -74,7 +74,7 @@ def welcome():
     response = VoiceResponse()
     with response.gather(num_digits=1, action=url_for("age"), method="POST") as g:
         g.say(
-            message="Thank you for calling Red isurance!. Before we connect you with an agent,,,, please choose from the following......",
+            message="Thank you for calling Redee surance!. While we connect you with an agent,,,, please choose from the following......",
             voice="Polly.Matthew",
             rate="85%",
         )
@@ -99,7 +99,7 @@ def end():
 @app.route("/age", methods=["POST"])
 def age():
     selected_option = request.form["Digits"]
-    option_actions = {"1": _ask_planb, "2": _ask_interest}
+    option_actions = {"1": _ask_interest, "2": _ask_planb}
 
     if selected_option in option_actions.keys():
         response = VoiceResponse()
